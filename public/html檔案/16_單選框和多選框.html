@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="14_表單基本結構.html">
+        帳戶: <input type="text" name="account" value="321321" maxlength="10">
+        <br>
+        密碼: <input type="text" name="pwd" maxlength="8">
+        <br>
+        性別: 
+        <!-- 單選按鈕 -->
+        <input type="radio" name="gender" value="male">男
+        <input type="radio" name="gender" value="female" checked>女
+        <br>
+        <!-- 多選按鈕 -->
+        愛好:
+        <input type="checkbox" name="hobby" value="smoke" checked>抽菸
+        <input type="checkbox" name="hobby" value="drink" checked>喝酒
+        <input type="checkbox" name="hobby" value="perm">燙頭髮
+        <br>
+        其他:
+        <!-- cols:幾個字 rows:幾行 -->
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <br>
+        縣市:
+        <select name="place" id="">
+            <!-- selected 默認選中 -->
+            <option selected value="01">台北</option>
+            <option value="31">新北</option>
+            <option value="11">基隆</option>
+        </select>
+        <!-- 隱藏域 -->
+        <input type="hidden" name="重點" value="鄭齊很帥">
+
+        <!-- 確認按鈕_1 and 2 -->
+        <button>確認</button>
+        <input type="submit" value="確認">
+        <!-- 重製按鈕_1 and 2 -->
+        <button type="reset">重製</button>
+        <input type="reset" value="重製">
+        <br>
+        <!-- 普通按鈕_1 and 2 -->
+        <button type="button">檢測帳戶是否被註冊</button>
+        <input type="button" value="檢測帳戶是否被註冊">
+        <br>
+        <!-- 禁用表單 -->
+        無法使用的框框:
+        <input disabled type="text" value="321321">
+    </form>
+</body>
+</html>

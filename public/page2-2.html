@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #FFFACD; 
+        }
+    </style>
+    <!-- 引入外部的jQuery庫（來源自Google CDN），用於實現更複雜的網頁互動和動態效果。 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <a href="麥當勞點餐系統.html">
+            <img src="麥當勞.png" width="100" height="100" alt="公司的Logo"/>
+        </a>
+    </div>    
+    <h2>註冊</h2>
+    <hr>
+    <form id="registerForm">
+        <label for="name">姓名:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="phone">電話:</label><br>
+        <input type="text" id="phone" name="phone" required><br>
+        <label for="password">密碼:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <input type="submit" value="註冊">
+    </form>
+    <script>
+        $('#registerForm').submit(function(event) {
+            event.preventDefault();
+            var formData = {
+                name: $('#name').val(),
+                phone: $('#phone').val(),
+                password: $('#password').val()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/register',
+                data: JSON.stringify(formData),
+                contentType: 'application/json',
+                success: function(response) {
+                    alert('註冊成功');
+                    window.location.href = '麥當勞點餐系統.html';
+                },
+                error: function() {
+                    alert('註冊時出錯');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

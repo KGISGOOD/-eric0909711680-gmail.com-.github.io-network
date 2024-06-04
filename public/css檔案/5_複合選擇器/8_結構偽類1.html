@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 結構1:若div的第一個子代為p元素，則選中 */
+        /* div > p:first-child  {
+            color: red;
+        } */
+        /* 結構2:若div有子代p元素，則選中第一個 */
+        /* div p:first-child  {
+            color: red;
+        } */
+        /* 結構3:若div有後代p元素且為第一個子元素(不管父元素是誰)，則選中 */
+        p:first-child  {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 結構1 -->
+    <!-- <div>
+        <p>趙六:99分</p>
+        <p>張三:98分</p>
+        <p>王五:78分</p>
+        <p>李四:68分</p>
+    </div> -->
+    <!-- 結構2 -->
+    <!-- <div>
+        <span>趙六:99分</span>
+        <p>張三:98分</p>
+        <p>王五:78分</p>
+        <p>李四:68分</p>
+    </div> -->
+    <p>測試3</p>
+    <div>
+        <p>測試1</p>
+        <marquee>
+            <p>測試2</p>
+            <p>趙六:99分</p>
+        </marquee>
+        <p>張三:98分</p>
+        <p>王五:78分</p>
+        <p>李四:68分</p>
+    </div>
+</body>
+</html>

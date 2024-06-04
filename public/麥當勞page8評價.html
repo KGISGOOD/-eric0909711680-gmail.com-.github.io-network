@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>評價我們的服務</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #FFFACD;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+       
+        footer {
+            margin-top: 20px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-content p, .footer-content li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <a href="麥當勞點餐系統.html">
+            <img src="麥當勞.png" width="100" height="100" alt="公司的Logo"/>
+        </a>
+    </div>    
+    <hr>
+    <h2>評價</h2>
+    <div class="container">
+        <h2>評價我們的服務</h2>
+        <form id="ratingForm">
+            <label for="rating">星級評價</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" required>
+            <br>
+            <label for="comment">留言</label>
+            <textarea id="comment" name="comment" rows="4" cols="50" maxlength="50" placeholder="您的留言（最多 50 字）"></textarea>
+            <br>
+            <label for="phone">電話號碼:</label>
+            <input type="text" id="phone" name="phone" required>
+            <br><br>
+            <button type="submit">提交評價</button>
+        </form>
+    </div>
+    
+    <hr>
+    <div>
+        <footer>
+            <div class="footer-content">
+                <div>
+                    <p>名言</p>
+                    <li>能執行的程式碼就是好的程式碼</li>
+                </div>
+                <div>
+                    <p>作者</p>
+                    <li>12173230鄭凱峻</li>
+                    <li>12173244鄭齊</li>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/mcdonalds.tw/?locale=zh_TW" target="_blank">
+                        <img src="facebook icon.png" alt="Facebook" />
+                    </a>
+                    <a href="https://www.youtube.com/@user-fz7ox2rl5e" target="_blank">
+                        <img src="youtube icon.png" alt="YouTube" />
+                    </a>
+                    <a href="https://www.instagram.com/mcdonaldstw/" target="_blank">
+                        <img src="instagram icon.png" alt="Instagram" />
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+document.getElementById('ratingForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var rating = document.getElementById('rating').value;
+    var comment = document.getElementById('comment').value;
+    var phone = document.getElementById('phone').value;
+
+    if (!phone) {
+        alert('請輸入電話號碼');
+        return;
+    }
+
+    fetch('/submit-rating', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ rating: rating, comment: comment, phone: phone })
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert("評價已成功提交！");
+    })
+    .catch(error => {
+        console.error('評價提交時出錯:', error);
+        alert('評價提交時出錯');
+    });
+});
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="12173230鄭凱峻">
+    <meta name="keyword" content="完整全端（前端+後端+連接）系統">
+    <title>麥當勞點餐系統</title>
+    <style>
+        body {
+            background-color: #FFFACD; /* 淡黃色 */
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive; /* 使用可愛的字體 */
+        }
+        /*.tab-title：設置標籤標題的字體大小為20px，字體加粗，顯示為塊元素，顏色為深灰色（#333），底部間距為5px。*/
+        .tab-title {
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+            color: #333; /* 更改标题字体颜色 */
+            margin-bottom: 5px; /* 添加底部间距 */
+        }
+        /*.tab-description：設置描述文字的字體大小為14px*/
+        .tab-description {
+            font-size: 14px;
+            display: block;
+            color: #666; /* 更改描述字体颜色 */
+        }
+        /*頁首徽標：*/
+        /*.header-logo：使用flexbox將內容對齊到中心，並設置上下內邊距為20px。*/
+        .header-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+        }
+        /*.header-logo img：設置徽標圖像的寬高為100px。*/
+        .header-logo img {
+            width: 100px;
+            height: 100px;
+        }
+        /*上排選擇按鈕*/
+        /*nav：使用flexbox佈局，使內容左右對齊，並設置上下內邊距為10px，左右內邊距為20px。*/
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+       .nav-links a {
+            margin: 0 10px;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        /*.nav-links a:hover：當滑鼠懸停在鏈接上時，顏色變為黃色*/
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+        /*.tab-button：設置按鈕為inline-block元素，內外邊距為10px，邊框為1px灰色（#ccc），
+        圓角半徑為5px，去除下劃線，字體顏色為黑色，背景顏色為白色，
+        背景顏色過渡時間為0.3s，並設置滑鼠為指針樣式。*/
+        .tab-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            background-color: white;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .tab-button:hover {
+            background-color: #f0f0f0;
+        }
+
+
+        .tab-title {
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .tab-description {
+            font-size: 14px;
+            display: block;
+        }
+
+        .tab-image {
+            width: 300px;
+            height: 300px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        .footer-content div {
+            margin: 10px;
+        }
+
+        .footer-content p {
+            margin: 0;
+        }
+
+        .footer-content li {
+            list-style: none;
+            margin: 5px 0;
+        }
+
+        .footer-content a {
+            margin: 0 5px;
+        }
+
+        .footer-content a img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-logo">
+        <a href="麥當勞點餐系統.html">
+            <img src="麥當勞.png" alt="公司的Logo"/>
+        </a>
+    </div>    
+
+    <hr/>    
+
+    <nav>
+        <div class="nav-links">
+            <a href="上課作業.html">上課作業</a>
+            <a href="麥當勞page2會員登入.html">會員登入</a>
+            <a href="麥當勞聯繫我們.html">聯繫我們</a>
+            <a href="麥當勞page7常見問題.html">常見問題</a>
+            <a href="麥當勞page8評價.html">評價</a>
+        </div>
+        <div id="user-info" style="text-align: right;"></div>
+    </nav>
+
+    <hr>
+
+    <a href="麥當勞page3餐點介紹.html" class="tab-button" >
+        <img src="餐點介紹圖.jpg" alt="Tab Image" class="tab-image">
+        <span class="tab-title">餐點介紹</span>
+        <span class="tab-description">介紹各類餐點</span>
+    </a>
+    <a href="麥當勞page4點餐.html" class="tab-button" >
+        <img src="點餐圖.jpg" alt="Tab Image" class="tab-image">
+        <span class="tab-title">點餐</span>
+        <span class="tab-description">購買想吃的美食</span>
+    </a>
+
+    <a href="麥當勞現正推出.html" class="tab-button" >
+        <img src="最新活動圖.jpg" alt="Tab Image" class="tab-image">
+        <span class="tab-title">現正推出</span>
+        <span class="tab-description">最新活動</span>
+    </a>
+    <a href="麥當勞新聞.html" class="tab-button" >
+        <img src="新聞.jpg" alt="Tab Image" class="tab-image">
+        <span class="tab-title">目前新聞</span>
+        <span class="tab-description">最新新聞</span>
+    </a>
+
+    <hr>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <p>名言</p>
+                <li>能執行的程式碼就是好的程式碼</li>
+            </div>
+            <div>
+                <p>作者</p>
+                <li>12173230鄭凱峻</li>
+                <li>12173244鄭齊</li>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/mcdonalds.tw/?locale=zh_TW" target="_blank">
+                    <img src="facebook icon.png" alt="Facebook" />
+                </a>
+                <a href="https://www.youtube.com/@user-fz7ox2rl5e" target="_blank">
+                    <img src="youtube icon.png" alt="YouTube" />
+                </a>
+                <a href="https://www.instagram.com/mcdonaldstw/" target="_blank">
+                    <img src="instagram icon.png" alt="Instagram" />
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 當整個 HTML 文檔完全加載並解析完成後執行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 從 localStorage 中取得名為 'username' 的項目
+            const username = localStorage.getItem('username');
+            // 如果 'username' 存在，更新網頁中 id 為 'user-info' 的元素的文本內容
+            if (username) {
+                document.getElementById('user-info').textContent = `歡迎, ${username},主人回來`;
+            }
+        });
+    </script>
+</body>
+</html>

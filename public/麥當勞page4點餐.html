@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麥當勞點餐系統</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: #FFFACD; /* 淡黃色 */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .header-logo img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        .footer-content div {
+            margin: 10px;
+        }
+
+        .footer-content p {
+            margin: 0;
+        }
+
+        .footer-content li {
+            list-style: none;
+            margin: 5px 0;
+        }
+
+        .footer-content a {
+            margin: 0 5px;
+        }
+
+        .footer-content a img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-logo">
+        <a href="麥當勞點餐系統.html">
+            <img src="麥當勞.png" width="100" height="100" alt="公司的Logo"/>
+        </a>
+    </div>    
+    <hr/>    
+    <div style="text-align: left;">
+        <h2>餐點</h2>
+    </div>
+    <!-- 這個地方開始編輯 -->
+
+    <table border="1">
+        <tr>
+            <th>餐點</th>
+            <th>價格</th>
+            <th>數量</th>
+            <th>點餐</th>
+            <th>圖片</th>
+        </tr>
+        <tr>
+            <td>大漢堡</td>
+            <td id="price1">50</td>
+            <td><input type="number" id="quantity1" name="quantity1" min="1" max="10"></td>
+            <td><button onclick="addToCart('大漢堡', 'quantity1', 'price1')">加入購物車</button></td>
+            <td><img src="大漢堡.jpg" alt="大漢堡" width="200" height="200"></td>
+        </tr>
+        <tr>
+            <td>中漢堡</td>
+            <td id="price2">40</td>
+            <td><input type="number" id="quantity2" name="quantity2" min="1" max="10"></td>
+            <td><button onclick="addToCart('中漢堡', 'quantity2', 'price2')">加入購物車</button></td>
+            <td><img src="中漢堡.jpg" alt="中漢堡" width="200" height="200"></td>
+        </tr>
+        <tr>
+            <td>小漢堡</td>
+            <td id="price3">30</td>
+            <td><input type="number" id="quantity3" name="quantity3" min="1" max="10"></td>
+            <td><button onclick="addToCart('小漢堡', 'quantity3', 'price3')">加入購物車</button></td>
+            <td><img src="小漢堡.jpg" alt="小漢堡" width="200" height="200"></td>
+        </tr>
+        <tr>
+            <td>可口可樂</td>
+            <td id="price4">25</td>
+            <td><input type="number" id="quantity4" name="quantity4" min="1" max="10"></td>
+            <td><button onclick="addToCart('可口可樂', 'quantity4', 'price4')">加入購物車</button></td>
+            <td><img src="可口可樂.jpg" alt="可口可樂" width="200" height="200"></td>
+        </tr>
+    </table>
+    <button onclick="viewCart()">查看購物車</button>
+
+    <!-- 新增顯示購物車內容的區域 -->
+    <div id="cartContents" style="display: none;">
+        <h3>購物車內容</h3>
+        <ul id="cartItems"></ul>
+        <label for="phone">電話號碼:</label>
+        <input type="text" id="phone" name="phone" required>
+        <button onclick="submitCart()">提交</button>
+    </div>
+
+    <form id="orderForm" action="/submit-order" method="post" style="display: none;">
+        <input type="hidden" id="orders" name="orders">
+        <!-- 將電話號碼也作為表單的一部分 -->
+        <input type="hidden" id="phoneInput" name="phone">
+    </form>
+
+    <script>
+        /*var 用於聲明變量，例如用於聲明和初始化購物車對象。
+        alert 用於彈出對話框通知用戶某個商品已添加到購物車。
+        document.getElementById 用於根據 ID 獲取 HTML 元素，然後對其進行操作，例如獲取輸入值或更新元素內容*/
+        var cart = {};
+
+        function addToCart(item, quantityId, priceId) {
+            var quantity = document.getElementById(quantityId).value;
+            var price = document.getElementById(priceId).innerText;
+            cart[item] = { quantity: parseInt(quantity), price: parseInt(price) };
+            alert(item + ' 已加入購物車');
+        }
+
+        function viewCart() {
+            var cartContents = document.getElementById('cartContents');
+            var cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = '';
+
+            for (var item in cart) {
+                if (cart.hasOwnProperty(item)) {
+                    var listItem = document.createElement('li');
+                    listItem.textContent = item + ': ' + cart[item].quantity + ' 個, 單價 ' + cart[item].price + ' 元';
+                    cartItems.appendChild(listItem);
+                }
+            }
+
+            cartContents.style.display = 'block';
+        }
+
+        function submitCart() {
+            var orders = [];
+            for (var item in cart) {
+                if (cart.hasOwnProperty(item)) {
+                    orders.push({ item: item, quantity: cart[item].quantity });
+                }
+            }
+            document.getElementById('orders').value = JSON.stringify(orders);
+            document.getElementById('orderForm').submit();
+        }
+        function submitCart() {
+        var orders = [];
+        for (var item in cart) {
+            if (cart.hasOwnProperty(item)) {
+                orders.push({ item: item, quantity: cart[item].quantity });
+            }
+        }
+        var phone = document.getElementById('phone').value;
+        if (!phone) {
+            alert('請輸入電話號碼');/*只有有註冊的會員才能下單*/
+            return;
+        }
+        document.getElementById('orders').value = JSON.stringify(orders);
+        document.getElementById('phoneInput').value = phone; // 將電話號碼添加到表單中
+        document.getElementById('orderForm').submit();
+        }
+
+    </script>
+<hr>
+<div >
+    <footer>
+        <div class="footer-content" style="display: flex; justify-content: space-between;">
+            <div>
+                <p>名言</p>
+                <li>能執行的程式碼就是好的程式碼</li>
+            </div>
+            <div>
+                <p>作者</p>
+                <li>12173230鄭凱峻</li>
+                <li>12173244鄭齊</li>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/mcdonalds.tw/?locale=zh_TW" target="_blank">
+                    <img src="facebook icon.png" alt="Facebook" />
+                </a>
+                <a href="https://www.youtube.com/@user-fz7ox2rl5e" target="_blank">
+                    <img src="youtube icon.png" alt="YouTube" />
+                </a>
+                <a href="https://www.instagram.com/mcdonaldstw/" target="_blank">
+                    <img src="instagram icon.png" alt="Instagram" />
+                </a>
+            </div>
+            
+                <!-- 其他社交媒體圖標 -->
+        </div>
+    </footer>
+</div>
+</body>
+</html>

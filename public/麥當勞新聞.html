@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatted News Content</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive; /* Changed font to Comic Sans MS */
+            margin: 0;
+            padding: 20px;
+            background-color:#FFFACD; 
+        }
+       
+        .news-container {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .news-item {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        .news-title {
+            color: #333;
+            font-size: 1.2em;
+        }
+        .news-content {
+            color: #666;
+        }
+        .news-button {
+            display: inline-block;
+            margin-top: 5px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .news-button:hover {
+            text-decoration: underline;
+        }
+        .link-back {
+            display: block;
+            color: #010c17;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        .footer-content {
+            display: flex; 
+            justify-content: space-between;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+        .footer-content div {
+            margin: 10px;
+        }
+        .footer-content p {
+            margin: 0;
+        }
+        .footer-content li {
+            list-style: none;
+            margin: 5px 0;
+        }
+        .footer-content a {
+            margin: 0 5px;
+        }
+        .footer-content a img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <a href="麥當勞點餐系統.html">
+            <img src="麥當勞.png" width="100" height="100" alt="公司的Logo"/>
+        </a>
+    </div>    
+    <hr>
+    <h3>新聞</h3>
+    <div class="news-container">
+        <div class="news-item">
+            <div class="news-title">繳稅季免驚！麥當勞推「6大限時優惠券」</div>
+            <a href="新聞-1.html" class="news-button">閱讀更多</a>
+        </div>
+        <div class="news-item">
+            <div class="news-title">麥當勞證實：銷售超過預期</div>
+            <a href="新聞-2.html" class="news-button">閱讀更多</a>
+        </div>
+        <div class="news-item">
+            <div class="news-title">麥當勞6月開賣「窮鬼套餐」</div>
+            <a href="新聞-3.html" class="news-button">閱讀更多</a>
+        </div>
+    </div>
+    
+    <hr>
+    <footer>
+        <div class="footer-content">
+            <div>
+                <p>名言</p>
+                <li>能執行的程式碼就是好的程式碼</li>
+            </div>
+            <div>
+                <p>作者</p>
+                <li>12173230鄭凱峻</li>
+                <li>12173244鄭齊</li>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/mcdonalds.tw/?locale=zh_TW" target="_blank">
+                    <img src="facebook icon.png" alt="Facebook" />
+                </a>
+                <a href="https://www.youtube.com/@user-fz7ox2rl5e" target="_blank">
+                    <img src="youtube icon.png" alt="YouTube" />
+                </a>
+                <a href="https://www.instagram.com/mcdonaldstw/" target="_blank">
+                    <img src="instagram icon.png" alt="Instagram" />
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

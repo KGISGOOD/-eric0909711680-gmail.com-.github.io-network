@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+        /* 總結:兩個冒號為偽元素，一個冒號為偽類 */
+
+        /* 偽元素 -- 很像元素，但不是元素，是元素中的特殊位置 */
+        /* 選中元素中的第一個字母 */
+        /* 寫法1 (較差) */
+        span::first-letter {
+            color: red;
+            font-size: 40px;
+        }
+        /* 寫法2 (較好)*/
+        div::first-letter {
+            color: red;
+            font-size: 40px;
+        }
+        /* 選中元素中文本的第一行，會隨著網頁寬度改變 */
+        div::first-line {
+            background-color: gray;
+        }
+        /* 選中元素中被鼠標選取的文字 */
+        ::selection {
+            background-color: aliceblue;
+        }
+        /* 選中input中的提示文字 */
+        input::placeholder {
+            color: green;
+        }
+        /* 選中的是p元素最開始的位置，並創建一個新元素 */
+        /* 必須使用content屬性 */
+        p::before {
+            content: "$";
+        }
+        /* 選中的是p元素最後的位置，隨後創建一個子元素 */
+        /* 必須使用content屬性 */
+        p::after {
+            content: ".00";
+        }
+    </style>
+</head>
+<body>
+    <!-- 1 -->
+    <div><span>L</span>orem ipsum dolor sit amet consectetur adipisicing elit. Dolorem asperiores eveniet reiciendis iusto voluptatem consectetur doloremque eius fuga magni voluptas, consequuntur minima, delectus dolor aperiam similique. Ipsa ea tempore sunt reprehenderit vero quasi corrupti eaque deserunt officiis sit dolores, asperiores repellendus quaerat, non, est aut nulla magnam ipsum optio hic ab? Facilis illo perspiciatis omnis ipsam beatae architecto iusto porro?</div>
+    <!-- 2 -->
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem asperiores eveniet reiciendis iusto voluptatem consectetur doloremque eius fuga magni voluptas, consequuntur minima, delectus dolor aperiam similique. Ipsa ea tempore sunt reprehenderit vero quasi corrupti eaque deserunt officiis sit dolores, asperiores repellendus quaerat, non, est aut nulla magnam ipsum optio hic ab? Facilis illo perspiciatis omnis ipsam beatae architecto iusto porro?</div>
+    <br>
+    <input type="text" placeholder="請輸入文字">
+    <p>199</p>
+    <p>299</p>
+    <p>399</p>
+    <p>499</p>
+</body>
+</html>

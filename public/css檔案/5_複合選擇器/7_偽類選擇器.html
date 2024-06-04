@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* 偽類 : 很像類，但不是類，是元素特殊狀態的一種描述 */
+        /* 選中沒訪問過的a元素 */
+        a:link {
+            color: aqua;
+        }
+        /* 選中訪問過的a元素 */
+        a:visited {
+            color: orange;
+        }
+        /* 選中鼠標懸浮的元素 */
+        a:hover,
+        span:hover {
+            color: blue;
+        }
+        /* 選中鼠標點擊的元素 */
+        a:active,
+        span:active {
+            color: brown;
+        }
+        
+        input:focus,
+        select:focus {
+            color: orange;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.google.com">去google</a>
+    <a href="https://www.youtube.com/">去youtube</a>
+    <span>321321321</span>
+    <br>
+    <input type="text"> 
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">
+    <br>
+    <select name="" id="">
+        <option value="3">張三</option>
+        <option value="4">李四</option>
+        <option value="5">王五</option>
+        <option value="6">趙六</option>
+    </select>
+</body>
+</html>

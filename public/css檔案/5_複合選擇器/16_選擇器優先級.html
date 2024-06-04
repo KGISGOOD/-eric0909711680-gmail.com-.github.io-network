@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 選擇器優先級</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 樣式優先級：1. 標籤選擇器 */
+p {
+    color: blue;
+}
+
+/* 樣式優先級：2. 類別選擇器 */
+.text {
+    color: green;
+}
+
+/* 樣式優先級：3. 類別選擇器 + 類別選擇器 */
+.text.special {
+    color: red;
+}
+
+/* 樣式優先級：4. ID選擇器 */
+#container .text {
+    color: purple;
+}
+
+/* 樣式優先級：5. 行內樣式 */
+p.special {
+    color: orange !important;
+}
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p class="text">這是一段文字。</p>
+        <p class="text special">這是一段特殊的文字。</p>
+        <p>這是一段沒有類別的文字。</p>
+    </div>
+</body>
+</html>

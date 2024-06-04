@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* 選中屬性值為title的元素
+        div[title]{
+            color: aliceblue;
+        } */
+        /* 選中title屬性值為abcdefg1的元素 */
+        div[title="abcdefg1"]{
+            color: antiquewhite;
+        }
+        /* 選中title屬性值開頭為a的的元素*/
+        div[title^="a"]{
+            color: aqua;
+        }
+        /* 選中title屬性值以3為結尾的元素 */
+        div[title$="3"]{
+            color: aquamarine;
+        }
+        /* 選中title屬性值包含c的元素 */
+        /* div[title*="c"]{
+            color: azure;
+        } */
+    </style>
+</head>
+<body>
+    <div title="abcdefg1">abcdefg2</div>
+    <div title="abcdefg2">abcdefg3</div>
+    <div title="abcdefg3">abcdefg1</div>
+    <div title="abcdefg4">abcdefg4</div>
+</body>
+</html>

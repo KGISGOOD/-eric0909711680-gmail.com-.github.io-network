@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: gray;
+        }
+        /* 跟div緊緊相鄰的元素p(只往下看) */
+        div + p{
+            color: rebeccapurple;
+        }
+        /* 在div以下的所有兄弟--通用兄弟選擇器 */
+        p ~ p{
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div>技能</div>
+    <p>前端</p>
+    <p>JAVA</p>
+    <p>大數據</p>
+    <p>UI</p>
+</body>
+</html>

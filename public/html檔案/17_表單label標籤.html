@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="14_表單基本結構.html">
+        <!-- label:讓使用者點擊字可以聚焦到框框 -->
+        <!-- label用法_1 -->
+        <label for="帳戶">帳戶:</label>
+         <input id="帳戶" type="text" name="account" value="321321" maxlength="10">
+        <br>
+        <!-- label用法_2 -->
+        <label>
+            密碼: <input type="text" name="pwd" maxlength="8">
+        </label>
+        <br>
+        性別: 
+        <label for="sex">男</label>
+        <input id="sex" type="radio" name="gender" value="male">
+        <label>
+        <input type="radio" name="gender" value="female" checked>女
+        </label>
+        <br>
+        愛好:
+        <label>
+        <input type="checkbox" name="hobby" value="smoke" checked>抽菸
+        </label>
+        <label>
+        <input type="checkbox" name="hobby" value="drink" checked>喝酒
+        </label>
+        <label>
+        <input type="checkbox" name="hobby" value="perm">燙頭髮
+        </label>
+        <br>
+        其他:
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <br>
+        縣市:
+        <select name="place" id="">
+            <option value="01">台北</option>
+            <option value="31">新北</option>
+            <option value="11">基隆</option>
+        </select>
+        <input type="hidden" name="重點" value="鄭齊很帥">
+
+        <input type="submit" value="確認">
+        <input type="reset" value="重製">
+        <br>
+        <input type="button" value="檢測帳戶是否被註冊">
+        <br>
+        無法使用的框框:
+        <input disabled type="text" value="321321">
+    </form>
+</body>
+</html>

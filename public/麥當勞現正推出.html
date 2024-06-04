@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout Page</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive; /* Changed font to Comic Sans MS */
+            margin: 0;
+            padding: 20px;
+            background-color:#FFFACD; 
+        }
+        /*定義網格容器（Grid Container）中列的大小和數量*/
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .grid-item {
+            background: white;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        .footer-content {
+            display: flex; 
+            justify-content: space-between;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+        .footer-content div {
+            margin: 10px;
+        }
+        .footer-content p {
+            margin: 0;
+        }
+        .footer-content li {
+            list-style: none;
+            margin: 5px 0;
+        }
+        .footer-content a {
+            margin: 0 5px;
+        }
+        .footer-content a img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <a href="麥當勞點餐系統.html">
+            <img src="麥當勞.png" width="100" height="100" alt="公司的Logo"/>
+        </a>
+    </div>    
+    <hr>
+    <div style="text-align: left;">
+        <h2>現正推出</h2>
+    </div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <h3>【限時神美味】異世界幻の醬搭辣味麥克鷄塊最高！</h3>
+            <p>雞塊沾醬界的神物，「幻の醬」，現在跨維度來襲！異世界蒜香搭配跨次元酸辣，搭配期間限定辣味麥克鷄塊，錯過，再等下個異世界開啟！</p>
+        </div>
+        <div class="grid-item">
+            <h3>2024 全新甜心卡 3/13起限量開賣</h3>
+            <p>興奮到手抖抖抖…麥當勞四大天王來了！買A送B優惠一整年，快抖陣一起蒐集全套四款</p>
+        </div>
+        <div class="grid-item">
+            <h3>快來歡樂送®收藏抖陣一起暖心杯套！</h3>
+            <p>不想出門？還是不方便出門？麥當勞歡樂送APP提供24小時點餐服務，讓你想吃就點，歡樂不間斷。</p>
+        </div>
+        <div class="grid-item">
+            <h3>1+1星級點只要$69，吃的加喝的，任你挑選！</h3>
+            <p>紅區選一個，白區選一個，1+1只要$69！下午茶或消夜，任何時刻都能搭出省錢ㄟ組合 </p>
+        </div>
+        <div class="grid-item">
+            <h3>麥當勞叔叔與好朋友們
+                抖陣一起隨手瓶&購物袋</h3>
+            <p>【40週年限定】第二彈來了，經典四人物與你相約愛地球，袋點環保，喝口永續，一起創造小改變大美好，限量發售！</p>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <div class="footer-content">
+            <div>
+                <p>名言</p>
+                <li>能執行的程式碼就是好的程式碼</li>
+            </div>
+            <div>
+                <p>作者</p>
+                <li>12173230鄭凱峻</li>
+                <li>12173244鄭齊</li>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/mcdonalds.tw/?locale=zh_TW" target="_blank">
+                    <img src="facebook icon.png" alt="Facebook" />
+                </a>
+                <a href="https://www.youtube.com/@user-fz7ox2rl5e" target="_blank">
+                    <img src="youtube icon.png" alt="YouTube" />
+                </a>
+                <a href="https://www.instagram.com/mcdonaldstw/" target="_blank">
+                    <img src="instagram icon.png" alt="Instagram" />
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

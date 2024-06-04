@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* 1.根據子代倒數 */
+        /* div > p:nth-last-child(3) {
+            color: red;
+        } */
+        /* 1.根據類倒數 */
+        /* div > p:nth-last-of-type(2) {
+            color: red;
+        } */
+        /* 2.選中沒有兄弟(不分元素)的span元素 */
+        /* div > p:only-child {
+            color: red;
+        } */
+        /* 3.選中沒有兄弟(按元素判斷)的span元素 */
+        /* div > p:only-of-type {
+            color: red;
+        } */
+        /* 選中的是根元素 */
+        /* :root {
+            background-color: gray;
+        } */
+        /* 選中沒有內容的div元素 */
+        div:empty {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1 -->
+    <!-- <div>
+        <span>test1</span>
+        <p>趙六:99分</p>
+        <p>張三:98分</p>
+        <p>王五:78分</p>
+        <p>趙六:68分</p>
+        <p>孫七:58分</p>
+        <p>老八:48分</p>
+        <span>test2</span>
+    </div> -->
+    <!-- 2、3 -->
+    <!-- <div>
+        <div>
+            <span>test2</span>
+        </div>
+        <span>test1</span>
+        <p>趙六:99分</p>
+        <p>張三:98分</p>
+        <p>王五:78分</p>
+        <p>趙六:68分</p>
+        <p>孫七:58分</p>
+        <p>老八:48分</p>
+        <span>test2</span>
+    </div> -->
+    <!-- 4 -->
+    <div></div>
+</body>
+</html>

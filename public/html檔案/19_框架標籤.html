@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>範例 HTML 文件</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 外部CSS連結 -->
+</head>
+<body>
+    <header>
+        <h1>網站標題</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#about">關於我們</a></li>
+                <li><a href="#contact">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>歡迎來到我們的網站</h2>
+            <p>這是一段介紹內容。</p>
+        </section>
+        <section id="about">
+            <h2>關於我們</h2>
+            <p>這裡是關於我們的介紹。</p>
+        </section>
+        <section id="contact">
+            <h2>聯絡我們</h2>
+            <form action="submit_form.php" method="post">
+                <label for="name">姓名：</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">電子郵件：</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="message">訊息：</label>
+                <textarea id="message" name="message" required></textarea>
+                <br>
+                <button type="submit">送出</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 我的網站. 版權所有.</p>
+    </footer>
+</body>
+</html>

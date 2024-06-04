@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* 若div元素中的lang屬性值為en，則選中 */
+        div:lang(en) {
+            color: red;
+        }
+        /* 不管元素是甚麼，只要lang屬性的值為zh-TW，則選中 */
+        /* 因為在html元素中的lang質已經是zh-TW，所以選中全部 */
+        :lang(zh-TW) {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div>你為何不避</div>
+    <div lang="en">why do not escape</div>
+    <p>因為我</p>
+    <span>小兒麻痺</span>
+</body>
+</html>

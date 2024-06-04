@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* 選中div的子代p元素，但排除class="fail" */
+        div > p:not(.fail) {
+            color: red;
+        }
+        /* 選中div的子代p元素，但排除title="加油" */    
+        div > p:not([title="加油"]) {
+            color: red;
+        }
+        /* 選中div的子代p元素，第一個子代元素 */
+        div > p:not(:first-child) {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>張三:98分</p>
+        <p>李四:88分</p>
+        <p>王五:78分</p>
+        <p>趙六:66分</p>
+        <p class="fail" title="加油">孫七58分</p>
+        <p class="fail" title="加油">老八48分</p>
+    </div>       
+</body>
+</html>
