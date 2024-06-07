@@ -1,6 +1,7 @@
 # Final-project
 全端系統
 
+筆記：https://docs.google.com/presentation/d/1yzUF-qynivE1rJp1G2oiPt8gku3gEL2L4SQ8ILv9Wd8/edit#slide=id.g2e0b58ec68e_0_10
 
 control+c=中斷
 cd /Users/kg/Desktop/大一下期末專題
