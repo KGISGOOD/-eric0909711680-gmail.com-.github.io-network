@@ -12,6 +12,10 @@ const pool = mysql.createPool({
 
 
 
+  //改好後上傳
+
+
+
 
   host: 'localhost',
   user: 'root',
