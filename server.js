@@ -8,6 +8,11 @@ const port = 4000;
 //apple
 // 創建資料庫連接池
 const pool = mysql.createPool({
+
+
+
+
+  
   host: 'localhost',
   user: 'root',
   password: '0909711680',
