@@ -5,9 +5,6 @@ const path = require('path');
 adasdfrsfsfsdf
 const app = express();
 const port = 4000;
-
-
-
 // 創建資料庫連接池
 const pool = mysql.createPool({
   host: 'localhost',
