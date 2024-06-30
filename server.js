@@ -5,10 +5,11 @@ const path = require('path');
 adasdfrsfsfsdf
 const app = express();
 const port = 4000;
-//apple
+
+
+
 // 創建資料庫連接池
 const pool = mysql.createPool({
-  //改好後上傳
   host: 'localhost',
   user: 'root',
   password: '0909711680',
