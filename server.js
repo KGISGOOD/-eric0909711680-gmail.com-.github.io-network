@@ -1,21 +1,11 @@
-//導入 express、mysql2 和 path 模組，創建一個 Express 應用並設定伺服器運行的端口為 3000
+ada//導入 express、mysql2 和 path 模組，創建一個 Express 應用並設定伺服器運行的端口為 3000
 const express = require('express');
 const mysql = require('mysql2');
 const path = require('path');
-
+adasdfrsfsfsdf
 const app = express();
 const port = 4000;
 
-// 創建資料庫連接池
-const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '0909711680',
-  database: 'mc',
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-});
 
 // 中間件配置
 //配置了中間件來解析 URL 編碼和 JSON 請求，並設置靜態文件服務的目錄為 public
